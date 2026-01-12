@@ -1,0 +1,6 @@
+@promotions_services.api_HostAddress = http://localhost:5164
+
+GET {{promotions_services.api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
