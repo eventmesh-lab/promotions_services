@@ -20,6 +20,7 @@ namespace promotions_services.application.DTOs
         /// Atributo que corresponde a la respuesta recibida por la operación solicitada (True, False).
         /// </summary>
         public bool Exito { get; set; }
+        public GetValidCouponsDto? coupon { get; set; }
 
     }
 }
