@@ -1,0 +1,5 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">C:\Users\ADBLA\AppData\Local\Temp\JetBrains\ReSharperPlatformVs17\vAny_a89828a4\CoverageData\_promotions_services.-1810580450\Snapshot\snapshot.utdcvr</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=6c573dc9_002D7bc0_002D498d_002D8a7a_002D9cbe19c37ceb/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="ObtenerMediosPagoUsuario_ShouldReturnOk_WithListOfCoupons" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Solution /&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
