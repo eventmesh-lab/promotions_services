@@ -1,0 +1,34 @@
+services:
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: promotions-service
+    ports:
+      - "5432:5432"
+    volumes:
+      - promotions_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d promotions-service"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  promotions:
+    build:
+      context: .
+      args:
+        APP_PORT: 7185
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__ConnectionPostgre: "Host=db;Port=5432;Database=promotions-service;Username=postgres;Password=postgres"
+    ports:
+      - "7185:7185"
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: on-failure
+
+volumes:
+  promotions_pgdata:
