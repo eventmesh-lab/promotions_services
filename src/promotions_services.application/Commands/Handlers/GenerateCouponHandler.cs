@@ -37,7 +37,16 @@ namespace promotions_services.application.Commands.Handlers
                     return new ResultadoDTO
                     {
                         Exito = true,
-                        Mensaje = $"¡Felicidades! Se ha generado un cupón del {coupon.DiscountAmount}% de descuento para un monto minimo de {coupon.AmountMin}. Puedes canjear hasta el {fecha} "
+                        Mensaje = $"¡Felicidades! Se ha generado un cupón del {coupon.DiscountAmount}% de descuento para un monto minimo de {coupon.AmountMin}. Puedes canjear hasta el {fecha} ",
+                        coupon = new GetValidCouponsDto{
+                                        Id= coupon.Id,
+                                        Email= coupon.Email,
+                                        DiscountAmount= coupon.DiscountAmount,
+                                        CreatedAt= coupon.CreatedAt,
+                                        ExpirationDate= coupon.ExpirationDate,
+                                        IsValid= coupon.IsValid,
+                                        AmountMin= coupon.AmountMin
+                                    }
                     };
                 }
 
@@ -51,7 +60,8 @@ namespace promotions_services.application.Commands.Handlers
                         return new ResultadoDTO
                         {
                             Exito = false,
-                            Mensaje = $"Ya has solicitado un cupón recientemente. Podrás generar uno nuevo en {diasRestantes} días."
+                            Mensaje = $"Ya has solicitado un cupón recientemente. Podrás generar uno nuevo en {diasRestantes} días.",
+                            coupon = null
                         };
                     }
                 }
@@ -61,7 +71,17 @@ namespace promotions_services.application.Commands.Handlers
                 return new ResultadoDTO
                 {
                     Exito = true,
-                    Mensaje = $"¡Felicidades! Se ha generado un cupón del {coupon.DiscountAmount}% de descuento para un monto minimo de {coupon.AmountMin}. Puedes canjear hasta el {fecha} "
+                    Mensaje = $"¡Felicidades! Se ha generado un cupón del {coupon.DiscountAmount}% de descuento para un monto minimo de {coupon.AmountMin}. Puedes canjear hasta el {fecha} ",
+                    coupon = new GetValidCouponsDto
+                    {
+                        Id = coupon.Id,
+                        Email = coupon.Email,
+                        DiscountAmount = coupon.DiscountAmount,
+                        CreatedAt = coupon.CreatedAt,
+                        ExpirationDate = coupon.ExpirationDate,
+                        IsValid = coupon.IsValid,
+                        AmountMin = coupon.AmountMin
+                    }
                 };
             }
             catch (Exception ex)
