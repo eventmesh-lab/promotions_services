@@ -489,7 +489,7 @@ az postgres flexible-server create \
   --resource-group mygroup \
   --location eastus \
   --admin-user myadmin \
-  --admin-password MyP@ssw0rd \
+  --admin-password <YOUR_SECURE_PASSWORD> \
   --sku-name Standard_B1ms
 
 # 4. Desplegar Container App
@@ -498,7 +498,7 @@ az containerapp create \
   --resource-group mygroup \
   --image myregistry.azurecr.io/promotions-service:v1 \
   --environment myenv \
-  --env-vars "ConnectionStrings__ConnectionPostgre=Host=promotions-db.postgres.database.azure.com;Port=5432;Database=promotions-service;Username=myadmin;Password=MyP@ssw0rd;SSL Mode=Require"
+  --env-vars "ConnectionStrings__ConnectionPostgre=Host=promotions-db.postgres.database.azure.com;Port=5432;Database=promotions-service;Username=myadmin;Password=<YOUR_SECURE_PASSWORD>;SSL Mode=Require"
 ```
 
 ### Variables de Entorno Producción
@@ -506,7 +506,7 @@ az containerapp create \
 ```bash
 ASPNETCORE_ENVIRONMENT=Production
 ASPNETCORE_URLS=http://*:7185
-ConnectionStrings__ConnectionPostgre=Host=prod-db.example.com;Port=5432;Database=promotions-service;Username=prod_user;Password=STRONG_PASSWORD;SSL Mode=Require
+ConnectionStrings__ConnectionPostgre=Host=prod-db.example.com;Port=5432;Database=promotions-service;Username=prod_user;Password=<YOUR_SECURE_PASSWORD>;SSL Mode=Require
 Logging__LogLevel__Default=Warning
 Logging__LogLevel__Microsoft.AspNetCore=Warning
 ```
