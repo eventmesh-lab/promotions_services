@@ -42,7 +42,7 @@ Host=<host>;Port=<puerto>;Database=<nombre_bd>;Username=<usuario>;Password=<cont
 
 - **Producción (ejemplo):**
   ```
-  Host=prod-db.example.com;Port=5432;Database=promotions-service;Username=promotions_user;Password=STRONG_PASSWORD_HERE;SSL Mode=Require
+  Host=prod-db.example.com;Port=5432;Database=promotions-service;Username=promotions_user;Password=<YOUR_SECURE_PASSWORD>;SSL Mode=Require
   ```
 
 ### Variables Opcionales
