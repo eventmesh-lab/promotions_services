@@ -93,13 +93,13 @@ Configuración para desarrollo (sobrescribe valores):
 **Linux/Mac:**
 ```bash
 export ASPNETCORE_ENVIRONMENT=Production
-export ConnectionStrings__ConnectionPostgre="Host=prod-db.example.com;Port=5432;Database=promotions-service;Username=prod_user;Password=secret123"
+export ConnectionStrings__ConnectionPostgre="Host=prod-db.example.com;Port=5432;Database=promotions-service;Username=prod_user;Password=<YOUR_SECURE_PASSWORD>"
 ```
 
 **Windows (PowerShell):**
 ```powershell
 $env:ASPNETCORE_ENVIRONMENT="Production"
-$env:ConnectionStrings__ConnectionPostgre="Host=prod-db.example.com;Port=5432;Database=promotions-service;Username=prod_user;Password=secret123"
+$env:ConnectionStrings__ConnectionPostgre="Host=prod-db.example.com;Port=5432;Database=promotions-service;Username=prod_user;Password=<YOUR_SECURE_PASSWORD>"
 ```
 
 **Docker Compose (en docker-compose.yml):**
